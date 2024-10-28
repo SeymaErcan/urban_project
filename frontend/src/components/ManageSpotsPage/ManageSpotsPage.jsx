@@ -3,15 +3,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { getCurrentUserSpots } from "../../store/spot";
 import { useDispatch, useSelector } from "react-redux";
 import { MdStarRate } from "react-icons/md";
-import './ManageSpots.css'
+import './ManageSpots.css';
 import OpenModalButton from '../OpenModalButton';
-import UpdateSpotButton from "./UpdateSpotButton"
+import UpdateSpotButton from "./UpdateSpotButton";
 import DeleteSpotModal from "./DeleteSpotModal";
 
 const ManageSpotsPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currUserSpots = useSelector(state => state.spot.Spots);
+  const loading = useSelector(state => state.spot.loading); // Assuming there's a loading state
+  const error = useSelector(state => state.spot.error); // Assuming there's an error state
 
   console.log('user spots', currUserSpots);
 
@@ -24,11 +26,21 @@ const ManageSpotsPage = () => {
     return navigate('/spots/new');
   }
 
-  if (!currUserSpots) {
-    return (
-      <h1>Loading...</h1>
-    )
+  // Show loading state
+  if (loading) {
+    return <h1>Loading...</h1>;
   }
+
+  // Show error state if applicable
+  if (error) {
+    return <h1>Error: {error}</h1>;
+  }
+
+  // Check if currUserSpots is an array
+  if (!Array.isArray(currUserSpots) || currUserSpots.length === 0) {
+    return <h1>No spots available</h1>;
+  }
+
   return (
     <div className="manage-spots-page-container">
       <div className="manage-spots-header">
@@ -39,22 +51,22 @@ const ManageSpotsPage = () => {
         {currUserSpots.map(({ id, previewImage, city, state, avgRating, price }) => (
           <div key={id} className="spot-card">
             <NavLink to={`/spots/${id}`} className="spot-link">
-              <img src={previewImage} alt="spot-image" className="spot-image"/>
+              <img src={previewImage} alt="spot-image" className="spot-image" />
               <div className="spot-info">
                 <div>{city}, {state}</div>
                 <div><MdStarRate />{avgRating ? avgRating.toFixed(2) : avgRating}</div>
               </div>
               <div className="spot-price">${price} night</div>
             </NavLink>
-              <div className="update-delete-buttons-container">
-                <UpdateSpotButton spot={{ id, previewImage, city, state, avgRating, price }}/>
-                <OpenModalButton
-                  buttonText="Delete"
-                  buttonClassName="delete-review-modal-button"
-                  spotId={id}
-                  modalComponent={<DeleteSpotModal spotId={id}/>}
-                  />
-              </div>
+            <div className="update-delete-buttons-container">
+              <UpdateSpotButton spot={{ id, previewImage, city, state, avgRating, price }} />
+              <OpenModalButton
+                buttonText="Delete"
+                buttonClassName="delete-review-modal-button"
+                spotId={id}
+                modalComponent={<DeleteSpotModal spotId={id} />}
+              />
+            </div>
           </div>
         ))}
       </div>

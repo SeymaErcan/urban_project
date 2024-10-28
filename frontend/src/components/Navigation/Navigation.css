@@ -1,68 +1,131 @@
-.profile-dropdown{
-    background-color: white;
+/* Profile Dropdown */
+.profile-dropdown {
+    background-color: #f0f4ff;
+    /* Light blue background */
     list-style: none;
-    border: 2px solid black;
+    border: 2px solid #b0c4de;
+    /* Light steel blue */
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
-    top:8%;
+    top: 8%;
     right: 2%;
-    width: 150px;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hidden {
-    display: none
+    display: none;
 }
 
-.profile-menu-item{
-    padding: 5px;
-    font-size: small;
+.profile-menu-item {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    /* Dark gray */
+    transition: background-color 0.2s;
 }
 
-#manage-spots-container, #user-email{
-    border-bottom: 2px solid black;
+.profile-menu-item:hover {
+    background-color: #e0efff;
+    /* Slightly darker blue on hover */
+    border-radius: 8px;
 }
 
-#manage-spots-container{
-    text-decoration: none;
-    color: black;
+#manage-spots-container,
+#user-email {
+    border-bottom: 1px solid #b0c4de;
+    /* Light steel blue */
+    padding-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-#log-out-container{
+#log-out-container {
     align-self: center;
 }
 
+/* Profile Button */
 #menu-button {
     border-radius: 50px;
     display: flex;
-    justify-content: space-between;
-    padding: 5px 5px 5px 5px;
-    font-size: large;
-    border: 1.5px solid rgb(179, 178, 178);
-    background-color: white;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1.5px solid #b0c4de;
+    /* Light steel blue */
+    background-color: #f0f4ff;
+    /* Light blue background */
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
-#log-out-button{
-    border-radius: 50px;
-    display: flex;
-    padding: 10px 10px 10px 10px;
-    border: 1.5px solid black;
-    color: white;
-    background-color: rgb(94, 94, 94);
+#menu-button:hover {
+    background-color: #e0efff;
+    /* Darker blue on hover */
+    transform: scale(1.05);
 }
 
-#profile-logo{
-    padding-left: 5px;
-    color: rgb(86, 86, 86)
+/* Home Button */
+#home-button {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #007bff;
+    /* Bright blue */
+    padding-left: 10px;
+    transition: color 0.3s ease, transform 0.2s;
 }
 
+#home-button:hover {
+    color: #0056b3;
+    /* Darker blue on hover */
+    transform: scale(1.1);
+}
+
+#home-button:active {
+    color: #003d80;
+    /* Even darker blue on active */
+    transform: scale(1.05);
+}
+
+/* Create Spot Link */
+#create-spot-link {
+    text-decoration: none;
+    color: #007bff;
+    /* Bright blue */
+    padding: 5px 15px;
+    font-weight: 600;
+    background-color: #e0efff;
+    /* Light blue background */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+}
+
+#create-spot-link:hover {
+    background-color: #007bff;
+    /* Bright blue on hover */
+    color: #fff;
+    /* White text on hover */
+    transform: scale(1.05);
+}
+
+#create-spot-link:active {
+    background-color: #0056b3;
+    /* Darker blue on active */
+    color: #fff;
+    /* White text on active */
+    transform: scale(1.02);
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1.5px solid rgb(179, 178, 178);
-    padding: 10px 20px 20px 10px;
+    border-bottom: 1.5px solid #b0c4de;
+    /* Light steel blue */
+    padding: 10px 20px;
     list-style: none;
 }
 
@@ -72,34 +135,27 @@
     align-items: center;
 }
 
-#create-spot-link{
-    text-decoration: none;
-    color: rgb(15, 105, 84);
-    padding-right: 10px;
-}
+/* Home Container */
 .home-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
+/* Logo */
 #logo {
     font-size: x-large;
-    color: rgb(238, 66, 86);
+    color: #007bff;
+    /* Bright blue */
 }
 
-#home-button {
-    text-decoration: none;
-    font-size: x-large;
-    font-weight: 600;
-    color: rgb(238, 66, 86);
-    padding-left: 5px;
-}
-
+/* Profile Button */
 .profile-button {
     border: none;
 }
 
-.profile-button-log{
+.profile-button-log {
     border: none;
-    background-color: white;
+    background-color: #f0f4ff;
+    /* Light blue */
 }
