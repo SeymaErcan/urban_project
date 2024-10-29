@@ -97,7 +97,7 @@ const SpotDetailsPage = () => {
                                         buttonClassName="review-button"
                                         modalComponent={<CreateReviewFormModal />}
                                     />
-                                    <div style={{ marginTop: '15px' }}>Be the first to post a review!</div>
+                                    <div style={{ marginTop: '15px' }} className="post-review">Be the first to post a review!</div>
                                 </div>
                             )}
 
@@ -106,7 +106,14 @@ const SpotDetailsPage = () => {
                                     {spotDetails.Reviews.map(review => (
                                         <div key={review.id} className="single-review">
                                             <div className="reviewer-name">{review.User?.firstName}</div>
-                                            <div className="review-date">Month {review.createdAt.slice(0, 4)}</div>
+                                            {/* <div className="review-date">Month {review.createdAt.slice(0, 4)}</div> */}
+                                            <div className="review-date">
+                                                {new Date(review.createdAt).toLocaleDateString('default', {
+                                                    day: 'numeric',
+                                                    month: 'long',
+                                                    year: 'numeric'
+                                                })}
+                                            </div>
                                             <div className="review-text">{review.review}</div>
                                             {currUser && currUser.id === review.userId && (
                                                 <OpenModalButton

@@ -23,10 +23,10 @@ input[type=radio] {
     margin: 10px;
 }
 
-.submit-review-button {
+button.submit-review-button {
     height: 40px;
     width: 100%;
-    color: #007bff;
+    background-color: #007bff;
     color: white;
     box-shadow: 3px 3px black;
 }

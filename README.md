@@ -1,4 +1,4 @@
-# Pristine's AirBnB Project
+# AirBnB Project
 
 ## Database Schema Design
 
