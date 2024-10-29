@@ -1,9 +1,9 @@
-.spot-details-container{
+.spot-details-container {
   margin: 0px 40px 40px 40px;
   max-width: 1000px;
 }
 
-.spot-images-container{
+.spot-images-container {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
@@ -29,18 +29,19 @@
   gap: 10px;
 }
 
-.spot-images{
+.spot-images {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.description-price-container{
+.description-price-container {
   display: flex;
   justify-content: space-between;
 }
 
-.price-container{
+.price-container {
+  background-color: white;
   border: 2px solid black;
   border-radius: 15px;
   display: flex;
@@ -49,50 +50,55 @@
   margin: 18px 0px 0px 18px;
 }
 
-.price-details{
+.price-details {
   width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#reserve-button{
+p#description {
+  color: #007bff;
+
+}
+
+#reserve-button {
   margin: 0px 20px 0px 20px;
   height: 40px;
-  background-color: rgb(255, 63, 86);
+  background-color: #007bff;
   color: white;
   box-shadow: 3px 3px black;
 }
 
-.single-review{
+.single-review {
   margin: 30px 0px 30px 0px;
   display: flex;
   flex-direction: column;
 }
 
-.reviewer-name{
+.reviewer-name {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.review-date{
+.review-date {
   color: gray;
   font-size: small;
   margin-bottom: 5px;
 }
 
 @media screen and (min-width: 375px) and (max-width: 500px) {
-  .description-price-container{
+  .description-price-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .price-container{
+  .price-container {
     margin: 0px;
   }
 
-  .spot-images-container{
+  .spot-images-container {
     display: flex;
     flex-direction: column;
   }

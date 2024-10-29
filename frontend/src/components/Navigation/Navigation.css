@@ -84,9 +84,16 @@
 }
 
 #home-button:active {
-    color: #003d80;
-    /* Even darker blue on active */
-    transform: scale(1.05);
+    text-decoration: none;
+    color: #007bff;
+    /* Bright blue */
+    padding: 5px 15px;
+    font-weight: 1200;
+    background-color: #e0efff;
+    /* Light blue background */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+
 }
 
 /* Create Spot Link */

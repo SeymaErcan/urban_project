@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { FaUserCircle } from 'react-icons/fa';
 import { IoIosMenu } from "react-icons/io";
+import './ProfileButton.css'
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
@@ -19,9 +20,9 @@ function ProfileButton({ user }) {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
-        if (ulRef.current && !ulRef.current.contains(e.target)) {
-            setShowMenu(false);
-        }
+      if (ulRef.current && !ulRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
     };
 
     document.addEventListener('click', closeMenu);
@@ -40,7 +41,7 @@ function ProfileButton({ user }) {
     <>
       <button onClick={toggleMenu} id='menu-button'>
         <IoIosMenu />
-        <FaUserCircle id='profile-logo'/>
+        <FaUserCircle id='profile-logo' />
       </button>
       <div className={ulClassName} ref={ulRef}>
         <li className='profile-menu-item'>Hello, {user.username}</li>
